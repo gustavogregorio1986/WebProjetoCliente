@@ -1,4 +1,5 @@
-﻿using WebProjetoCliente.Dominio.Dominio;
+﻿using System.ComponentModel.DataAnnotations;
+using WebProjetoCliente.Dominio.Dominio;
 
 namespace WebProjetoCliente.Models
 {
@@ -6,6 +7,7 @@ namespace WebProjetoCliente.Models
     {
         public Guid Id { get; set; }
 
+        [Display(Name = "Nome do Cliente")]
         public string? NomeCliente { get; set; }
 
         public string? EmailCliente { get; set; }
