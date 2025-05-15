@@ -5,7 +5,7 @@
 
 <h2 class="mt-4 mb-3 text-primary">Cadastro de Cliente</h2>
 
-<form asp-action="Salvar" method="post" class="mt-4">
+<form asp-controller="Cliente" asp-action="CadastrarCliente" method="post" class="mt-4">
     <div class="mb-3">
         <label asp-for="NomeCliente" class="form-label"></label>
         <input asp-for="NomeCliente" class="form-control" />

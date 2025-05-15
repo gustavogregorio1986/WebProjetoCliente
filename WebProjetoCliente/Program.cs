@@ -1,9 +1,14 @@
 using WebProjetoCliente.Data.Dapper;
+using WebProjetoCliente.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<DapperContext>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ClienteReposiotry>();
+builder.Services.AddScoped<ProdutoRepository>();
 
 var app = builder.Build();
 

@@ -1,3 +1,32 @@
-﻿@{
+﻿@model IEnumerable<WebProjetoCliente.Models.ProdutoView>
+@{
     ViewData["Title"] = "Consultar Cliente";
 }
+
+@model IEnumerable<WebProjetoCliente.Models.ProdutoView>  <!-- ajuste o namespace conforme o seu -->
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome do Produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Quantidade de Clientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Id</td>
+                <td>@produto.NomeProduto</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.Preco.ToString("C")</td> <!-- Formata como moeda -->
+                <td>@produto.Quantidade</td>
+                <td>@produto.Clientes?.Count()</td>
+            </tr>
+        }
+    </tbody>
+</table>
